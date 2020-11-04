@@ -9,20 +9,10 @@
 
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
 	<link rel="stylesheet" type="text/css" href="css/owl.transitions.css"/>
-	<link rel="stylesheet" type="text/css" href="css/owl.carousel.css"/>
+	<!-- <link rel="stylesheet" type="text/css" href="css/owl.carousel.css"/> -->
 	<link rel="stylesheet" type="text/css" href="css/animate.css"/>
 	<link rel="stylesheet" type="text/css" href="css/main.css"/>
 
-
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/ajaxchimp.js"></script>
-
-	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
-	<script type="text/javascript" src="js/wow.js"></script>
-	<script type="text/javascript" src="js/parallax.js"></script>
-	<script type="text/javascript" src="js/nicescroll.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
-	<script type="text/javascript" src="js/scrollTo.js"></script>
 </head>
 <body>
 
@@ -295,5 +285,48 @@
 	</footer>
 	<!--  End Footer Section  -->
 
+	<script type="text/javascript">
+		const loadStyleSheet = connect => {
+			if (document.createStylesheet) {
+				document.createStylesheet(connect)
+			} else {
+				const stylesheet = document.createElement('link');
+				const carousel = document.createElement('script');
+				const wow = document.createElement('script');
+				const nicescroll = document.createElement('script');
+				const main = document.createElement('script');
+				stylesheet.href = connect;
+				stylesheet.type = 'text/css';
+				stylesheet.rel = 'stylesheet';
+				carousel.src = 'js/owl.carousel.min.js';
+				carousel.type = 'text/javascript';
+				wow.src = 'js/wow.js';
+				wow.type = 'text/javascript';
+				nicescroll.src = 'js/nicescroll.js';
+				nicescroll.type = 'text/javascript';
+				main.src = 'js/main.js';
+				main.type = 'text/javascript';
+				document.getElementsByTagName('head')[0].appendChild(stylesheet);
+				document.getElementsByTagName('body')[0].appendChild(carousel);
+				document.getElementsByTagName('body')[0].appendChild(wow);
+				document.getElementsByTagName('body')[0].appendChild(nicescroll);
+				document.getElementsByTagName('body')[0].appendChild(main);
+			}
+		}
+		window.onload = function() {
+        console.log('window done!')
+        loadStyleSheet('css/owl.carousel.css');
+      };
+	</script>
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/ajaxchimp.js"></script>
+
+	<!-- <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="js/wow.js"></script> -->
+	<script type="text/javascript" src="js/parallax.js"></script>
+	<!-- <script type="text/javascript" src="js/nicescroll.js"></script>
+	<script type="text/javascript" src="js/main.js"></script> -->
+	<!-- <script type="text/javascript" src="js/scrollTo.js"></script> -->
 </body>
 </html>
